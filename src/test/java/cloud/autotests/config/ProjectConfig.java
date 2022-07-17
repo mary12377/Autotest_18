@@ -14,12 +14,10 @@ public interface ProjectConfig extends Config {
     String browserVersion();
     @DefaultValue("1920x1080")
     String browserSize();
-    String browserMobileView();
     String remoteDriverUrl();
     String videoStorage();
     String Login();
     String Password();
     String authCookieName();
     String webUrl();
-    String apiUrl();
 }
