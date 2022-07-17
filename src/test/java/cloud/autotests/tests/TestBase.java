@@ -20,7 +20,8 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
     static String login,
-            password;
+            password,
+            authCookieName;
     static ProjectConfig config = ConfigFactory.create(ProjectConfig.class);
 
     @BeforeAll
@@ -29,7 +30,7 @@ public class TestBase {
         DriverSettings.configure();
         login = Project.config.Login();
         password = Project.config.Password();
-
+        authCookieName = Project.config.authCookieName();
     }
 
     @BeforeEach

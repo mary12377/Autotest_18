@@ -1,13 +1,8 @@
 package cloud.autotests.tests;
 
-import cloud.autotests.config.ProjectConfig;
-import com.codeborne.selenide.Configuration;
+
 import com.codeborne.selenide.WebDriverRunner;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Story;
-import io.qameta.allure.selenide.AllureSelenide;
-import io.restassured.RestAssured;
-import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.Cookie;
 
@@ -20,12 +15,9 @@ import static io.restassured.RestAssured.given;
 
 @Story("Login tests")
 public class DemowebshopTests extends TestBase {
-
 static String login = "qaguru@qa.guru",
         password = "qaguru@qa.guru1",
         authCookieName = "NOPCOMMERCE.AUTH";
-
-
     @Test
     @Tag("demowebshop")
     @DisplayName("Successful authorization to some demowebshop (API + UI)")
@@ -38,7 +30,7 @@ static String login = "qaguru@qa.guru",
                     .formParam("Password", password)
                     .log().all()
                     .when()
-                    .post("/login")
+                    .post("http://demowebshop.tricentis.com/login")
                     .then()
                     .log().all()
                     .statusCode(302)

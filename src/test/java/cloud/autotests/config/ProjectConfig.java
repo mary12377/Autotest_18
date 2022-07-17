@@ -19,4 +19,7 @@ public interface ProjectConfig extends Config {
     String videoStorage();
     String Login();
     String Password();
+    String authCookieName();
+    String webUrl();
+    String apiUrl();
 }
