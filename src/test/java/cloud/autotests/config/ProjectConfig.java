@@ -19,5 +19,5 @@ public interface ProjectConfig extends Config {
     String Login();
     String Password();
     String authCookieName();
-    String webUrl();
+    String baseUrl();
 }
